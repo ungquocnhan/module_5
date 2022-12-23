@@ -1,0 +1,10 @@
+<h1>Pick color</h1>
+<div style="width: 800px; height: 200px" [ngClass]="pickColor"></div>
+<button class="btn btn-primary" value="bg-primary" (mousemove)="changeColor($event.target)">Primary</button>
+<button class="btn btn-light" value="bg-light" (mouseover)="changeColor($event.target)">Light</button>
+<button class="btn btn-dark" value="bg-dark" (mouseover)="changeColor($event.target)">Dark</button>
+<button class="btn btn-danger" value="bg-danger" (mouseover)="changeColor($event.target)">Danger</button>
+<button class="btn btn-success" value="bg-success" (mouseover)="changeColor($event.target)">Success</button>
+<button class="btn btn-secondary" value="bg-secondary" (mouseover)="changeColor($event.target)">Secondary</button>
+<button class="btn btn-info" value="bg-info" (mouseover)="changeColor($event.target)">Info</button>
+<button class="btn btn-warning" value="bg-warning" (mouseover)="changeColor($event.target)">Warning</button>

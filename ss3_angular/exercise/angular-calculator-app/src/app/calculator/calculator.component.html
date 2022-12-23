@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Calculator</title>
+</head>
+<body>
+<h1>Calculator</h1>
+<form>
+  <table>
+    <tr>
+      <td colspan="2"><input placeholder="First Operand" (change)="input1($event.target)"></td>
+      <td colspan="2"><input placeholder="Second Operand" (change)="input2($event.target)"></td>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-success btn-sm" (click)="getOperator('ADDITION')">ADDITION</button></td>
+      <td><button type="button" class="btn btn-primary btn-sm" (click)="getOperator('SUBTRACTION')">SUBTRACTION</button></td>
+      <td><button type="button" class="btn btn-success btn-sm" (click)="getOperator('MULTIPLICATION')">MULTIPLICATION</button></td>
+      <td><button type="button" class="btn btn-primary btn-sm" (click)="getOperator('DIVISION')">DIVISION</button></td>
+    </tr>
+  </table>
+  <p>Hiển thị : {{result}}</p>
+</form>
+</body>
+</html>
