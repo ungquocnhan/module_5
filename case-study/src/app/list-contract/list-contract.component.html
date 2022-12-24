@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List contract</title>
+</head>
+<body>
+<nav class="navbar sticky-top" style="background: #388CDB">
+  <div class="container-fluid">
+    <a href="#" class="btn btn-sm" style="background: #E88246">Create contract</a>
+    <h1>Contract Management</h1>
+    <form class="d-flex">
+      <input class="form-control-sm me-2" type="search" name="search" placeholder="Search">
+      <button class="btn btn-sm" style="background: #E8C431" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<table class="table table-success table-striped">
+  <thead>
+  <tr>
+    <th scope="col">STT</th>
+    <th scope="col">Facility</th>
+    <th scope="col">Customer</th>
+    <th scope="col">Start Day</th>
+    <th scope="col">End Day</th>
+    <th scope="col">Deposit</th>
+    <th scope="col">Total</th>
+    <th scope="col">Attach Facility</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Room Twin 01</td>
+    <td>Nguyen Thi Hao</td>
+    <td>2020-12-08</td>
+    <td>2020-12-08</td>
+    <td>đ0</td>
+    <td>đ1000000</td>
+    <td>
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#add-contract">
+        +
+      </button>
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+              data-bs-target="#attach-facility">
+        List Attach Facility
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Villa Beach Front</td>
+    <td>Truong Dinh Nghe</td>
+    <td>2020-07-14</td>
+    <td>2020-07-21</td>
+    <td>đ200000</td>
+    <td>đ2000000</td>
+    <td>
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#add-contract">
+        +
+      </button>
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+              data-bs-target="#attach-facility">
+        List Attach Facility
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>House Princess 01</td>
+    <td>Duong Van Quan</td>
+    <td>2021-03-15</td>
+    <td>2021-03-17</td>
+    <td>đ50000</td>
+    <td>đ1500000</td>
+    <td>
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#add-contract">
+        +
+      </button>
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+              data-bs-target="#attach-facility">
+        List Attach Facility
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
