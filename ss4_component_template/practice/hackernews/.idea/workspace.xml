@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3069c4b1-e6ff-4370-8305-214c9c8a20b5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../case-study/.browserslistrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/e2e/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../case-study/tslint.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.browserslistrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/hackernews.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e2e/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/article.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/article/article.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/article/article.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/article/article.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/article/article.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tslint.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case_study_module_5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case_study_module_5/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/.idea/color-picker.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss3_angular/exercise/color-picker/color-picker/tslint.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2JJIgV8dqlqfhuM08fWpXi4aWWc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="F:\CODEGYM\module_5\ss4_component_template\practice\hackernews\node_modules\typescript\lib" />
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Tests (hackernews)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests (hackernews)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3069c4b1-e6ff-4370-8305-214c9c8a20b5" name="Default Changelist" comment="" />
+      <created>1671789870978</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671789870978</updated>
+      <workItem from="1671789872726" duration="698000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="715" height="192" key="GridCell.Tab.0.bottom" timestamp="1671790570889">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="715" height="192" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1671790570889" />
+    <state width="715" height="192" key="GridCell.Tab.0.center" timestamp="1671790570889">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="715" height="192" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1671790570889" />
+    <state width="715" height="192" key="GridCell.Tab.0.left" timestamp="1671790570889">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="715" height="192" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1671790570889" />
+    <state width="715" height="192" key="GridCell.Tab.0.right" timestamp="1671790570889">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="715" height="192" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1671790570889" />
+  </component>
+</project>

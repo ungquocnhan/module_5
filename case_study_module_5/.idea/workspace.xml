@@ -2,7 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b51566ce-710d-451b-b96c-6585f6e0e834" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/.idea/color-picker.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_angular/exercise/color-picker/color-picker/tslint.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +58,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -35,6 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1671608129857</updated>
       <workItem from="1671608131606" duration="96000" />
+      <workItem from="1671784212679" duration="93000" />
     </task>
     <servers />
   </component>
