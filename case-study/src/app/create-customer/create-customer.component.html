@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create customer</title>
+</head>
+<body>
+<nav class="navbar sticky-top" style="background: #388CDB">
+  <div class="container-fluid">
+    <a href="#" class="btn btn-sm" style="background: #E88246">Back list customer</a>
+    <h1>Customer Management</h1>
+    <form class="d-flex">
+      <input class="form-control-sm me-2" type="search" name="search" placeholder="Search">
+      <button class="btn btn-sm" style="background: #E8C431" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="container px-5 my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card border-0 rounded-3 shadow-lg">
+        <div class="card-body p-4">
+          <div class="text-center">
+            <div class="h1 fw-light">Create customer</div>
+          </div>
+
+          <form>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="name" placeholder="Name customer" name="name">
+              <label for="name">Name Customer</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="date" class="form-control" id="birthDay" name="birthDay">
+              <label for="birthDay">Day of Birth</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="idCard" name="idCard" placeholder="ID Card">
+              <label for="idCard">ID Card</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
+                     placeholder="Phone Number">
+              <label for="phoneNumber">Phone Number</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+              <label for="address">Address</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+              <label for="email">Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <select class="form-select" name="gender" id="gender" aria-label="Default select example">
+                <option selected value="">Gender</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+              </select>
+            </div>
+
+            <div class="form-floating mb-3">
+              <select class="form-select" name="customerType" id="customerType"
+                      aria-label="Default select example">
+                <option selected value="">Customer type</option>
+                <option value="1">Diamond</option>
+                <option value="2">Platinium</option>
+                <option value="3">Gold</option>
+                <option value="4">Silver</option>
+                <option value="5">Member</option>
+              </select>
+            </div>
+
+            <div class="d-grid">
+              <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
