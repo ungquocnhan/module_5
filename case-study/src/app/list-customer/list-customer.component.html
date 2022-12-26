@@ -28,16 +28,16 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Nguyễn Thị Hào</td>
-    <td>1970-11-07</td>
-    <td>Nữ</td>
-    <td>643431213</td>
-    <td>0945423362</td>
-    <td>thihao07@gmail.com</td>
-    <td>23 Nguyễn Hoàng, Đà Nẵng</td>
-    <td>Member</td>
+  <tr *ngFor="let customer of customers; let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{customer.name}}</td>
+    <td>{{customer.birthday | date: "dd/MM/yyyy"}}</td>
+    <td>{{customer.gender ? 'Male' : 'Female'}}</td>
+    <td>{{customer.idCard}}</td>
+    <td>{{customer.phoneNumber}}</td>
+    <td>{{customer.email}}</td>
+    <td>{{customer.address}}</td>
+    <td>{{customer.customerType?.name}}</td>
     <td>
       <button type="button" class="btn btn-primary btn-sm">
         Edit
@@ -45,48 +45,6 @@
     </td>
     <td>
       <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-tat="#exampleModal">
-        Delete
-      </button>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Phạm Xuân Diệu</td>
-    <td>1992-08-08</td>
-    <td>Nam</td>
-    <td>865342123</td>
-    <td>0954333333</td>
-    <td>xuandieu92@gmail.com</td>
-    <td>K77/22 Thái Phiên, Quảng Trị</td>
-    <td>Gold</td>
-    <td>
-      <button type="button" class="btn btn-primary btn-sm">
-        Edit
-      </button>
-    </td>
-    <td>
-      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Delete
-      </button>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>Trương Đình Nghệ</td>
-    <td>1990-02-27</td>
-    <td>Nam</td>
-    <td>488645199</td>
-    <td>0373213122</td>
-    <td>nghenhan2702@gmail.com</td>
-    <td>K323/12 Ông Ích Khiêm, Vinh</td>
-    <td>Diamond</td>
-    <td>
-      <button type="button" class="btn btn-primary btn-sm">
-        Edit
-      </button>
-    </td>
-    <td>
-      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Delete
       </button>
     </td>

@@ -26,55 +26,23 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Room Twin 01</td>
-    <td>Nguyen Thi Hao</td>
-    <td>2020-12-08</td>
-    <td>2020-12-08</td>
-    <td>đ0</td>
-    <td>đ1000000</td>
+  <tr *ngFor="let contract of contracts; let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{contract.facility?.name}}</td>
+    <td>{{contract.customer?.name}}</td>
+    <td>{{contract.startDate | date: "dd/MM/yyyy" }}</td>
+    <td>{{contract.endDate | date: "dd/MM/yyyy"}}</td>
     <td>
-      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#add-contract">
-        +
-      </button>
-      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-              data-bs-target="#attach-facility">
-        List Attach Facility
-      </button>
+      <div *ngIf="contract.deposit">
+        <span>{{contract.deposit | currency: "VND"}}</span>
+      </div>
     </td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Villa Beach Front</td>
-    <td>Truong Dinh Nghe</td>
-    <td>2020-07-14</td>
-    <td>2020-07-21</td>
-    <td>đ200000</td>
-    <td>đ2000000</td>
+    <td></td>
     <td>
-      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#add-contract">
+      <button type="button" class="btn btn-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#add-contract">
         +
       </button>
-      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-              data-bs-target="#attach-facility">
-        List Attach Facility
-      </button>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>House Princess 01</td>
-    <td>Duong Van Quan</td>
-    <td>2021-03-15</td>
-    <td>2021-03-17</td>
-    <td>đ50000</td>
-    <td>đ1500000</td>
-    <td>
-      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#add-contract">
-        +
-      </button>
-      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+      <button type="button" class="btn btn-primary btn-sm me-2" data-bs-toggle="modal"
               data-bs-target="#attach-facility">
         List Attach Facility
       </button>
