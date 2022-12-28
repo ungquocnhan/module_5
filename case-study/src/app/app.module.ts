@@ -6,15 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BodyHomeComponent } from './body-home/body-home.component';
-import { ListFacilityComponent } from './list-facility/list-facility.component';
-import { EditFacilityComponent } from './edit-facility/edit-facility.component';
-import { CreateFacilityComponent } from './create-facility/create-facility.component';
-import { ListCustomerComponent } from './list-customer/list-customer.component';
-import { EditCustomerComponent } from './edit-customer/edit-customer.component';
-import { CreateCustomerComponent } from './create-customer/create-customer.component';
-import { CreateContractComponent } from './create-contract/create-contract.component';
-import { ListContractComponent } from './list-contract/list-contract.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { CustomerListComponent } from './customer/customer-list/customer-list.component';
+import { CustomerCreateComponent } from './customer/customer-create/customer-create.component';
+import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
+import { FacilityListComponent } from './facility/facility-list/facility-list.component';
+import { FacilityCreateComponent } from './facility/facility-create/facility-create.component';
+import { FacilityEditComponent } from './facility/facility-edit/facility-edit.component';
+import { ContractListComponent } from './contract/contract-list/contract-list.component';
+import { ContractCreateComponent } from './contract/contract-create/contract-create.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +22,14 @@ import {ReactiveFormsModule} from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     BodyHomeComponent,
-    ListFacilityComponent,
-    EditFacilityComponent,
-    CreateFacilityComponent,
-    ListCustomerComponent,
-    EditCustomerComponent,
-    CreateCustomerComponent,
-    CreateContractComponent,
-    ListContractComponent
+    CustomerListComponent,
+    CustomerCreateComponent,
+    CustomerEditComponent,
+    FacilityListComponent,
+    FacilityCreateComponent,
+    FacilityEditComponent,
+    ContractListComponent,
+    ContractCreateComponent
   ],
   imports: [
     BrowserModule,

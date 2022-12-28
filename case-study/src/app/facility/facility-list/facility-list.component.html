@@ -1,0 +1,59 @@
+<app-header></app-header>
+
+<div>
+
+  <nav class="navbar sticky-top" style="background: #388CDB">
+    <div class="container-fluid">
+      <a href="#" class="btn btn-sm" style="background: #E88246">Create facility</a>
+      <h1>Facility Management</h1>
+      <form class="d-flex">
+        <input class="form-control-sm me-2" type="search" name="search" placeholder="Search">
+        <button class="btn btn-sm" style="background: #E8C431" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="d-flex flex-wrap justify-content-center" style="margin: 10px 0">
+      <div class="card mx-5 my-3 text-bg-success" *ngFor="let service of facilities">
+        <img src="../../../assets/image/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-_Exterior-1-F.jpg" height="240"
+             width="371" class="card-img-top" alt="...">
+        <div class="card-body" >
+          <div class="media" style="height: 200px">
+            <h5 class="card-title">{{service.name}}</h5>
+            <span class="card-text"><b>Area :</b></span>&nbsp;
+            <a>{{service.area}}m<sup>2</sup></a><br>
+            <span class="card-text"><b>Cost :</b></span>&nbsp;
+            <a>{{service.cost | currency: "VND"}}</a><br>
+            <span class="card-text"><b>Max people :</b></span>&nbsp;
+            <a>{{service.maxPeople}}</a><br>
+            <span class="card-text"><b>Standard room :</b></span>&nbsp;
+            <a>{{service.standardRoom}}</a><br>
+            <span class="card-text"><b>Other convenience :</b></span>&nbsp;
+            <a>{{service.descriptionOtherConvenience}}</a><br>
+            <div *ngIf="service.poolArea">
+              <span class="card-text"><b>Pool area :</b></span>&nbsp;
+              <a>{{service.poolArea}}</a><br>
+            </div>
+            <div *ngIf="service.numberOfFloor">
+              <span class="card-text"><b>Number of floor :</b></span>&nbsp;
+              <a>{{service.numberOfFloor}}</a><br>
+            </div>
+            <div *ngIf="service.facilityFree">
+              <span class="card-text"><b>Facility free :</b></span>&nbsp;
+              <a>{{service.facilityFree}}</a><br>
+            </div>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-end">
+            <a class="p-2 bd-highlight btn btn-primary me-2">Edit</a>
+            <a class="p-2 bd-highlight btn btn-primary me-2">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+

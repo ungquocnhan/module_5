@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+<nav class="navbar sticky-top" style="background: #388CDB">
+  <div class="container-fluid">
+    <a href="#" class="btn btn-sm" style="background: #E88246">Create customer</a>
+    <h1>Customer Management</h1>
+    <form class="d-flex">
+      <input class="form-control-sm me-2" type="search" name="search" placeholder="Search">
+      <button class="btn btn-sm" style="background: #E8C431" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<table class="table table-success table-striped">
+  <thead>
+  <tr>
+    <th scope="col">STT</th>
+    <th scope="col">Name customer</th>
+    <th scope="col">Day of Birth</th>
+    <th scope="col">Gender</th>
+    <th scope="col">ID Card</th>
+    <th scope="col">Phone Number</th>
+    <th scope="col">Email</th>
+    <th scope="col">Address</th>
+    <th scope="col">Customer Type</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers; let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{customer.name}}</td>
+    <td>{{customer.birthday | date: "dd/MM/yyyy"}}</td>
+    <td>{{customer.gender ? 'Male' : 'Female'}}</td>
+    <td>{{customer.idCard}}</td>
+    <td>{{customer.phoneNumber}}</td>
+    <td>{{customer.email}}</td>
+    <td>{{customer.address}}</td>
+    <td>{{customer.customerType?.name}}</td>
+    <td>
+      <button type="button" class="btn btn-primary btn-sm">
+        Edit
+      </button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-tat="#exampleModal">
+        Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<app-create-customer (eventCreate)="saveCustomer($event)"></app-create-customer>
+<app-footer></app-footer>
+
+
