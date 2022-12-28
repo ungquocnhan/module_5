@@ -9,7 +9,7 @@ import {CustomerType} from '../interface/customer/customer-type';
 })
 export class ListCustomerComponent implements OnInit {
   customer: Customer = {};
-  customerType: CustomerType[] = [
+  customerTypes: CustomerType[] = [
     {id: 1, name: 'Diamond'},
     {id: 2, name: 'Platinium'},
     {id: 3, name: 'Gold'},
@@ -27,7 +27,7 @@ export class ListCustomerComponent implements OnInit {
       phoneNumber: '0945423362',
       email: 'thihao07@gmail.com',
       address: '23 Nguyễn Hoàng, Đà Nẵng',
-      customerType: this.customerType[4]
+      customerType: this.customerTypes[4]
     },
     {
       id: 2,
@@ -38,7 +38,7 @@ export class ListCustomerComponent implements OnInit {
       phoneNumber: '0954333333',
       email: 'xuandieu92@gmail.com',
       address: 'K77/22 Thái Phiên, Quảng Trị',
-      customerType: this.customerType[2]
+      customerType: this.customerTypes[2]
     },
     {
       id: 3,
@@ -49,7 +49,7 @@ export class ListCustomerComponent implements OnInit {
       phoneNumber: '0373213122',
       email: 'nghenhan2702@gmail.com',
       address: 'K323/12 Ông Ích Khiêm, Vinh',
-      customerType: this.customerType[0]
+      customerType: this.customerTypes[0]
     },
     {
       id: 4,
@@ -60,7 +60,7 @@ export class ListCustomerComponent implements OnInit {
       phoneNumber: '0490039241',
       email: 'duongquan@gmail.com',
       address: 'K453/12 Lê Lợi, Đà Nẵng',
-      customerType: this.customerType[0]
+      customerType: this.customerTypes[0]
     },
     {
       id: 5,
@@ -71,7 +71,7 @@ export class ListCustomerComponent implements OnInit {
       phoneNumber: '0312345678',
       email: 'nhinhi123@gmail.com',
       address: '224 Lý Thái Tổ, Gia Lai',
-      customerType: this.customerType[3]
+      customerType: this.customerTypes[3]
     },
     {
       id: 6,
@@ -82,7 +82,7 @@ export class ListCustomerComponent implements OnInit {
       phoneNumber: '0988888844',
       email: 'tonnuchau@gmail.com',
       address: '37 Yên Thế, Đà Nẵng',
-      customerType: this.customerType[3]
+      customerType: this.customerTypes[3]
     },
     {
       id: 7,
@@ -93,7 +93,7 @@ export class ListCustomerComponent implements OnInit {
       phoneNumber: '0912345698',
       email: 'kimcuong84@gmail.com',
       address: 'K123/45 Lê Lợi, Hồ Chí Minh',
-      customerType: this.customerType[0]
+      customerType: this.customerTypes[0]
     },
     {
       id: 8,
@@ -104,7 +104,7 @@ export class ListCustomerComponent implements OnInit {
       phoneNumber: '0763212345',
       email: 'haohao99@gmail.com',
       address: '55 Nguyễn Văn Linh, Kon Tum',
-      customerType: this.customerType[2]
+      customerType: this.customerTypes[2]
     },
     {
       id: 9,
@@ -115,7 +115,7 @@ export class ListCustomerComponent implements OnInit {
       phoneNumber: '0643343433',
       email: 'danhhai99@gmail.com',
       address: '24 Lý Thường Kiệt, Quảng Ngãi',
-      customerType: this.customerType[0]
+      customerType: this.customerTypes[0]
     },
     {
       id: 10,
@@ -126,7 +126,7 @@ export class ListCustomerComponent implements OnInit {
       phoneNumber: '0987654321',
       email: 'dactam@gmail.com',
       address: '22 Ngô Quyền, Đà Nẵng',
-      customerType: this.customerType[1]
+      customerType: this.customerTypes[1]
     },
   ];
 
@@ -136,4 +136,8 @@ export class ListCustomerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  saveCustomer(event: any): void {
+    console.log(event.value);
+    this.customers.push(event.value);
+  }
 }

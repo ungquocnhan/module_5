@@ -21,61 +21,131 @@
             <div class="h1 fw-light">Create customer</div>
           </div>
 
-          <form>
+          <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
 
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="name" placeholder="Name customer" name="name">
-              <label for="name">Name Customer</label>
+              <input type="text" class="form-control" id="name" placeholder="Name customer" name="name"
+                     formControlName="name">
+              <label for="name">Name customer:</label>
+              <div *ngIf="!name?.valid && (name?.dirty || name?.touched)">
+                <div [hidden]="!name?.errors?.required" class="alert alert-danger">
+                  Name customer is required.
+                </div>
+                <div [hidden]="!name?.errors?.maxlength" class="alert alert-danger">
+                  Name customer not max length 100 character.
+                </div>
+              </div>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="date" class="form-control" id="birthDay" name="birthDay">
-              <label for="birthDay">Day of Birth</label>
+              <input type="text" class="form-control" id="code" placeholder="Code customer" name="code"
+                     formControlName="code">
+              <label for="code">Code customer:</label>
+              <div *ngIf="!code?.valid && (code?.dirty || code?.touched)">
+                <div [hidden]="!code?.errors?.required" class="alert alert-danger">
+                  Code customer is required.
+                </div>
+                <div [hidden]="!code?.errors?.pattern" class="alert alert-danger">
+                  Code customer incorrect format - KH-XXXX (X number 0-9).
+                </div>
+              </div>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="idCard" name="idCard" placeholder="ID Card">
-              <label for="idCard">ID Card</label>
+              <input type="date" class="form-control" id="birthday" name="birthday" formControlName="birthday">
+              <label for="birthday">Day of birth:</label>
+              <div *ngIf="!birthday?.valid && (birthday?.dirty || birthday?.touched)">
+                <div [hidden]="!birthday?.errors?.required" class="alert alert-danger">
+                  Birthday is required.
+                </div>
+              </div>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
+              <input type="text" class="form-control" id="idCard" name="idCard" placeholder="ID Card"
+                     formControlName="idCard">
+              <label for="idCard">ID card:</label>
+              <div *ngIf="!idCard?.valid && (idCard?.dirty || idCard?.touched)">
+                <div [hidden]="!idCard?.errors?.required" class="alert alert-danger">
+                  ID card is required.
+                </div>
+                <div [hidden]="!idCard?.errors?.pattern" class="alert alert-danger">
+                  ID card incorrect format - XXXXXXXXX - XXXXXXXXXXXX (X number 0-9).
+                </div>
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" formControlName="phoneNumber"
                      placeholder="Phone Number">
-              <label for="phoneNumber">Phone Number</label>
+              <label for="phoneNumber">Phone number:</label>
+              <div *ngIf="!phoneNumber?.valid && (phoneNumber?.dirty || phoneNumber?.touched)">
+                <div [hidden]="!phoneNumber?.errors?.required" class="alert alert-danger">
+                  Phone number is required.
+                </div>
+                <div [hidden]="!phoneNumber?.errors?.pattern" class="alert alert-danger">
+                  Phone number incorrect format - 090xxxxxxx or 091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx (x number
+                  0-9).
+                </div>
+              </div>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="address" name="address" placeholder="Address">
-              <label for="address">Address</label>
+              <input type="text" class="form-control" id="address" name="address" placeholder="Address"
+                     formControlName="address">
+              <label for="address">Address:</label>
+              <div *ngIf="!address?.valid && (address?.dirty || address?.touched)">
+                <div [hidden]="!address?.errors?.required" class="alert alert-danger">
+                  Address is required.
+                </div>
+              </div>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                     formControlName="email">
+              <label for="email">Email:</label>
+              <div *ngIf="!email?.valid && (email?.dirty || email?.touched)">
+                <div [hidden]="!email?.errors?.required" class="alert alert-danger">
+                  Email is required.
+                </div>
+                <div [hidden]="!email?.errors?.pattern" class="alert alert-danger">
+                  Email incorrect format email.
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label class="me-5">Gender:</label>
+              <label class="radio-inline me-5" for="male"><input class="form-check-input me-2" type="radio"
+                                                                 name="gender" id="male" value="true"
+                                                                 formControlName="gender">Male</label>
+              <label class="radio-inline me-5" for="female"><input class="form-check-input me-2" type="radio"
+                                                                   name="gender" id="female" value="false"
+                                                                   formControlName="gender">Female</label>
+              <div *ngIf="!gender?.valid && (gender?.dirty || gender?.touched)">
+                <div [hidden]="!gender?.errors?.required" class="alert alert-danger">
+                  Gender is required.
+                </div>
+              </div>
             </div>
 
             <div class="form-floating mb-3">
-              <select class="form-select" name="gender" id="gender" aria-label="Default select example">
-                <option selected value="">Gender</option>
-                <option value="1">Male</option>
-                <option value="2">Female</option>
-              </select>
-            </div>
-
-            <div class="form-floating mb-3">
-              <select class="form-select" name="customerType" id="customerType"
+              <select class="form-select" name="customerType" id="customerType" formControlName="customerType"
                       aria-label="Default select example">
-                <option selected value="">Customer type</option>
-                <option value="1">Diamond</option>
-                <option value="2">Platinium</option>
-                <option value="3">Gold</option>
-                <option value="4">Silver</option>
-                <option value="5">Member</option>
+                <option [ngValue]="cType.id" *ngFor="let cType of customerTypes">{{cType.name}}</option>
               </select>
+              <label for="customerType">Customer type:</label>
+              <div *ngIf="!customerType?.valid && (customerType?.dirty || customerType?.touched)">
+                <div [hidden]="!customerType?.errors?.required" class="alert alert-danger">
+                  Customer type is required.
+                </div>
+              </div>
             </div>
 
             <div class="d-grid">
-              <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit
+              <button class="btn btn-primary btn-lg" id="submitButton" type="submit" [disabled]="!customerForm.valid">
+                Submit
               </button>
             </div>
           </form>
