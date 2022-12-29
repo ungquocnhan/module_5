@@ -1,9 +1,9 @@
-<app-header></app-header>
+
 
 <body>
 <nav class="navbar sticky-top" style="background: #388CDB">
   <div class="container-fluid">
-    <a href="#" class="btn btn-sm" style="background: #E88246">Back list customer</a>
+    <a class="btn btn-sm" style="background: #E88246" routerLink="/customer/list">Back list customer</a>
     <h1>Customer Management</h1>
     <form class="d-flex">
       <input class="form-control-sm me-2" type="search" name="search" placeholder="Search">
@@ -147,7 +147,7 @@
             </div>
 
             <div class="d-grid">
-              <button class="btn btn-primary btn-lg" id="submitButton" type="submit" [disabled]="!customerForm.valid">
+              <button class="btn btn-primary btn-lg" type="submit" [disabled]="!customerForm.valid">
                 Submit
               </button>
             </div>
@@ -158,5 +158,4 @@
   </div>
 </div>
 
-<app-footer></app-footer>
 

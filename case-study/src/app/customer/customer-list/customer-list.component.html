@@ -1,8 +1,7 @@
-<app-header></app-header>
 
 <nav class="navbar sticky-top" style="background: #388CDB">
   <div class="container-fluid">
-    <a href="#" class="btn btn-sm" style="background: #E88246">Create customer</a>
+    <a class="btn btn-sm" style="background: #E88246" routerLink="/customer/create">Create customer</a>
     <h1>Customer Management</h1>
     <form class="d-flex">
       <input class="form-control-sm me-2" type="search" name="search" placeholder="Search">
@@ -39,19 +38,18 @@
     <td>{{customer.address}}</td>
     <td>{{customer.customerType?.name}}</td>
     <td>
-      <button type="button" class="btn btn-primary btn-sm">
+      <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/customer/edit', customer.id]">
         Edit
       </button>
     </td>
     <td>
-      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-tat="#exampleModal">
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="temp = customer">
         Delete
       </button>
     </td>
   </tr>
   </tbody>
 </table>
-<app-customer-create (eventCreate)="saveCustomer($event)"></app-customer-create>
-<app-footer></app-footer>
+<app-customer-delete [customer]="temp"></app-customer-delete>
 
 

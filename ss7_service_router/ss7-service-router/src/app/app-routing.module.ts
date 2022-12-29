@@ -23,12 +23,12 @@ const routes: Routes = [
     }]
   },
   {
-    path: 'product/list',
-    component: ProductListComponent
+    path: 'product',
+    loadChildren: () => import('./product_management/product/product.module').then(module => module.ProductModule)
   },
   {
-    path: 'product/create',
-    component: ProductCreateComponent
+    path: 'category',
+    loadChildren: () => import('./product_management/category/category.module').then(module => module.CategoryModule)
   },
   {
     path: 'dictionary',
@@ -43,10 +43,6 @@ const routes: Routes = [
   {
     path: 'dictionary/detail/:word',
     component: DictionaryDetailComponent
-  },
-  {
-    path: 'product/edit/:id',
-    component: ProductEditComponent
   }
 ];
 

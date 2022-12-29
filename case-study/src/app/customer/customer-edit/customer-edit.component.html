@@ -1,9 +1,8 @@
-<app-header></app-header>
 
 <body>
 <nav class="navbar sticky-top" style="background: #388CDB">
   <div class="container-fluid">
-    <a href="#" class="btn btn-sm" style="background: #E88246">Back list customer</a>
+    <a class="btn btn-sm" style="background: #E88246" routerLink="/customer/list">Back list customer</a>
     <h1>Customer Management</h1>
     <form class="d-flex">
       <input class="form-control-sm me-2" type="search" name="search" placeholder="Search">
@@ -21,7 +20,7 @@
             <div class="h1 fw-light">Edit customer</div>
           </div>
 
-          <form [formGroup]="customerEditForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="customerEditForm" (ngSubmit)="onSubmit(id)">
             <div class="form-floating mb-3" hidden>
               <input type="text" class="form-control" id="id" placeholder="Name facility" name="id">
               <label for="id">Id</label>
@@ -118,10 +117,10 @@
             <div class="form-group mb-3">
               <label class="me-5">Gender:</label>
               <label class="radio-inline me-5" for="male"><input class="form-check-input me-2" type="radio"
-                                                                 name="gender" id="male" value="true"
+                                                                 name="gender" id="male"
                                                                  formControlName="gender">Male</label>
               <label class="radio-inline me-5" for="female"><input class="form-check-input me-2" type="radio"
-                                                                   name="gender" id="female" value="false"
+                                                                   name="gender" id="female"
                                                                    formControlName="gender">Female</label>
               <div *ngIf="!gender?.valid && (gender?.dirty || gender?.touched)">
                 <div [hidden]="!gender?.errors?.required" class="alert alert-danger">
@@ -155,5 +154,4 @@
   </div>
 </div>
 
-<app-footer></app-footer>
 

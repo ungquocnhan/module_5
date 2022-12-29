@@ -3,6 +3,8 @@ import {Customer} from '../customer';
 import {CustomerType} from '../customer-type';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import { differenceInYears } from 'date-fns';
+import {CustomerService} from '../customer.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-customer-create',
@@ -10,16 +12,7 @@ import { differenceInYears } from 'date-fns';
   styleUrls: ['./customer-create.component.css']
 })
 export class CustomerCreateComponent implements OnInit {
-  customer: Customer = {};
-  @Output()
-  eventCreate = new EventEmitter();
-  customerTypes: CustomerType[] = [
-    {id: 1, name: 'Diamond'},
-    {id: 2, name: 'Platinum'},
-    {id: 3, name: 'Gold'},
-    {id: 4, name: 'Silver'},
-    {id: 5, name: 'Member'},
-  ];
+  customerTypes: CustomerType[] = [];
 
   codePattern: RegExp = /^KH[-][0-9]{4}$/;
   idCardPattern: RegExp =  /^([0-9]{12})$|^([0-9]{9})$/;
@@ -79,15 +72,20 @@ export class CustomerCreateComponent implements OnInit {
     return this.customerForm.get('customerType');
   }
 
-  constructor() {
+  constructor(private customerService: CustomerService, private route: Router) {
+    this.customerTypes = this.customerService.getAllCustomerType();
   }
 
   ngOnInit(): void {
   }
 
-  onSubmit(): void {
-    console.log(this.customerForm.value);
-    this.eventCreate.emit(this.customerForm.value);
-  }
 
+  onSubmit() {
+    console.log(this.customerForm.value);
+    let customer = this.customerForm.value;
+    this.customerService.saveCustomer(customer);
+    this.customerForm.reset();
+    this.route.navigateByUrl("/customer/list");
+    alert("Create success");
+  }
 }
