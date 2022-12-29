@@ -58,6 +58,9 @@
                 <div [hidden]="!birthday?.errors?.required" class="alert alert-danger">
                   Birthday is required.
                 </div>
+                <div [hidden]="!birthday?.hasError('greaterThan18')" class="alert alert-danger">
+                  Birthday must over 18 age.
+                </div>
               </div>
             </div>
 

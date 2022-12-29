@@ -77,7 +77,7 @@
               </div>
 
               <div class="form-floating mb-3">
-                <select class="form-select" aria-label="Default select example" id="facilityType" name="facilityType" formControlName="facilityType" (change)="selectTypeFacility()">
+                <select class="form-select" aria-label="Default select example" id="facilityType" name="facilityType" formControlName="facilityType">
                   <option [ngValue]="fType.id" *ngFor="let fType of facilityTypes">{{fType.name}}</option>
                 </select>
                 <label for="facilityType">Facility type:</label>

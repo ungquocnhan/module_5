@@ -1,7 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Customer} from '../customer';
 import {CustomerType} from '../customer-type';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import { differenceInYears } from 'date-fns';
 
 @Component({
   selector: 'app-customer-create',
@@ -27,7 +28,7 @@ export class CustomerCreateComponent implements OnInit {
   customerForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.maxLength(100)]),
     code: new FormControl('', [Validators.required, Validators.pattern(this.codePattern)]),
-    birthday: new FormControl('', [Validators.required]),
+    birthday: new FormControl('', [Validators.required, this.validateBirthday]),
     gender: new FormControl('', [Validators.required]),
     idCard: new FormControl('', [Validators.required, Validators.pattern(this.idCardPattern)]),
     phoneNumber: new FormControl('', [Validators.required, Validators.pattern(this.phonePattern)]),
@@ -35,6 +36,12 @@ export class CustomerCreateComponent implements OnInit {
     address: new FormControl('', [Validators.required]),
     customerType: new FormControl('', [Validators.required]),
   });
+
+  validateBirthday(c: AbstractControl) {
+    let date = new Date(c.value);
+    let age = differenceInYears(new Date(), date);
+    return (age <= 18) ? {'greaterThan18': true} : null;
+  }
 
   get name() {
     return this.customerForm.get('name');
