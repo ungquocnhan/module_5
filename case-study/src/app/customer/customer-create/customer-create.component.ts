@@ -20,8 +20,8 @@ export class CustomerCreateComponent implements OnInit {
     {id: 5, name: 'Member'},
   ];
 
-  codePattern = '^KH[-][0-9]{4}$';
-  idCardPattern = '^([0-9]{12})|([0-9]{9})$';
+  codePattern: RegExp = /^KH[-][0-9]{4}$/;
+  idCardPattern: RegExp =  /^([0-9]{12})$|^([0-9]{9})$/;
   emailPattern = '^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$';
   phonePattern = '^(090|091|[(]84[)][+]90|[(]84[)][+]91)[0-9]{7}$';
   customerForm = new FormGroup({

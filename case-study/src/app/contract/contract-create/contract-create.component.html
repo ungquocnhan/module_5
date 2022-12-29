@@ -21,53 +21,50 @@
             <div class="h1 fw-light">Create contract</div>
           </div>
 
-          <form>
+          <form [formGroup]="contractCreateForm" (ngSubmit)="onSubmit()">
 
             <div class="form-floating mb-3">
-              <input type="date" class="form-control" id="dateStart" name="dateStart">
+              <input type="date" class="form-control" id="dateStart" name="dateStart" formControlName="dateStart">
               <label for="dateStart">Date start </label>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="date" class="form-control" id="dateEnd" name="dateEnd">
+              <input type="date" class="form-control" id="dateEnd" name="dateEnd" formControlName="dateEnd">
               <label for="dateEnd">Date end</label>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="deposit" name="deposit" placeholder="Deposit">
+              <input type="text" class="form-control" id="deposit" name="deposit" placeholder="Deposit" formControlName="deposit">
               <label for="deposit">Deposit</label>
             </div>
 
             <div class="form-floating mb-3">
-              <select class="form-select" name="customer" id="customer" aria-label="Default select example">
-                <option selected value="">Customer</option>
-                <option value="1">Customer1</option>
-                <option value="2">Customer1</option>
+              <select class="form-select" name="customer" id="customer" aria-label="Default select example" formControlName="customer">
+                <option [ngValue]="customer.id" *ngFor="let customer of customers">{{customer.name}}</option>
               </select>
+              <label for="customer">Customer:</label>
             </div>
 
             <div class="form-floating mb-3">
-              <select class="form-select" name="employee" id="employee" aria-label="Default select example">
+              <select class="form-select" name="employee" id="employee" aria-label="Default select example" formControlName="employee">
+<!--                <option [ngValue]="employee.id" *ngFor="let employee of emplyees">{{employee.name}}</option>-->
                 <option selected value="">Employee</option>
                 <option value="1">Employee1</option>
                 <option value="2">Employee1</option>
               </select>
+              <label for="employee">Employee:</label>
             </div>
 
             <div class="form-floating mb-3">
               <select class="form-select" name="facility" id="facility"
-                      aria-label="Default select example">
-                <option selected value="">Facility</option>
-                <option value="1">Villa Beach Front</option>
-                <option value="2">House Princess 01</option>
-                <option value="3">Room Twin 01</option>
-                <option value="4">Villa No Beach Front</option>
-                <option value="5">Room Twin 02</option>
+                      aria-label="Default select example" formControlName="facility">
+                <option [ngValue]="facility.id" *ngFor="let facility of facilities">{{facility.name}}</option>
               </select>
+              <label for="facility">Facility:</label>
             </div>
 
             <div class="d-grid">
-              <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit
+              <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit
               </button>
             </div>
           </form>
