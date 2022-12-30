@@ -11,7 +11,12 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class ProductEditComponent implements OnInit {
   product: Product | null = {};
-  productFormEdit: FormGroup = new FormGroup({});
+  productFormEdit: FormGroup = new FormGroup({
+    id: new FormControl(),
+    name: new FormControl(),
+    price: new FormControl(),
+    description: new FormControl(),
+  });
   id: number = 0;
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -19,13 +24,7 @@ export class ProductEditComponent implements OnInit {
               private route: Router) {
     this.activatedRoute.paramMap.subscribe(data => {
       this.id = parseInt(<string> data.get('id'));
-      let product = this.getProduct(this.id);
-      this.productFormEdit = new FormGroup({
-        id: new FormControl(product?.id),
-        name: new FormControl(product?.name),
-        price: new FormControl(product?.price),
-        description: new FormControl(product?.description)
-      });
+      this.getProduct(this.id);
     });
   }
 
@@ -33,13 +32,19 @@ export class ProductEditComponent implements OnInit {
   }
 
   private getProduct(id: number) {
-    return this.productService.findById(id);
+    return this.productService.findById(id).subscribe(data => {
+      this.productFormEdit.patchValue(data);
+    });
   }
 
   editProduct(id: number) {
     let product = this.productFormEdit?.value;
-    this.productService.editProduct(id, product);
-    this.route.navigateByUrl('product/list');
-    alert('Edit success');
+    this.productService.editProduct(id, product).subscribe(() => {
+      this.route.navigateByUrl('/product/list');
+      alert('Edit success');
+    }, error => {
+      console.log(error);
+    });
+
   }
 }

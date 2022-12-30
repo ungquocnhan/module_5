@@ -20,6 +20,8 @@ export class ProductDeleteComponent implements OnInit {
 
   deleteProduct() {
     console.log(this.product.id);
-    this.productService.deleteById(this.product.id);
+    this.productService.deleteById(this.product.id).subscribe(() =>{
+      window.location.reload();
+    });
   }
 }

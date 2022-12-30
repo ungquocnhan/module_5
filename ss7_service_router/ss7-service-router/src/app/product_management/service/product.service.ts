@@ -1,77 +1,37 @@
 import {Injectable} from '@angular/core';
 import {Product} from '../model/product';
 import {element} from 'protractor';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Category} from '../model/category';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  products: Product[] = [{
-    id: 1,
-    name: 'IPhone 12',
-    price: 2400000,
-    description: 'New'
-  }, {
-    id: 2,
-    name: 'IPhone 11',
-    price: 1560000,
-    description: 'Like new'
-  }, {
-    id: 3,
-    name: 'IPhone X',
-    price: 968000,
-    description: '97%'
-  }, {
-    id: 4,
-    name: 'IPhone 8',
-    price: 7540000,
-    description: '98%'
-  }, {
-    id: 5,
-    name: 'IPhone 11 Pro',
-    price: 1895000,
-    description: 'Like new'
-  }];
+  PRODUCT_URL = "http://localhost:3000/products";
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
+    this.getAll();
   }
 
-  getAll() {
-    return this.products;
+  getAll(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.PRODUCT_URL);
   }
 
-  saveProduct(product: any) {
-    this.products.push(product);
+  saveProduct(product: Product): Observable<Product> {
+    return this.httpClient.post<Product>(this.PRODUCT_URL, product);
   }
 
-  findById(id: number | null): Product | null {
-    let temp = this.products.filter(element => element.id == id);
-    if (temp.length == 0) {
-      return null;
-    }
-    return temp[0];
+  findById(id: number): Observable<Product> {
+    return this.httpClient.get<Product>(this.PRODUCT_URL + '/' + id);
   }
 
-  editProduct(id: number, product: Product) {
-    for (let i = 0; i < this.products.length; i++) {
-      if (this.products[i].id == id) {
-        this.products[i] = product;
-      }
-    }
+  editProduct(id: number, product: Product): Observable<Product> {
+    return this.httpClient.put<Product>(this.PRODUCT_URL + '/' + id, product);
   }
 
   deleteById(id: number | undefined) {
-    if (id != undefined) {
-      let product = this.findById(id);
-      if (product != null) {
-        let length = this.products.length;
-        for (let i = 0; i < length; i++) {
-          if (product.id == this.products[i].id) {
-            this.products.splice(i, 1);
-            break;
-          }
-        }
-      }
-    }
+    return this.httpClient.delete<Product>(this.PRODUCT_URL + '/' + id);
   }
 }

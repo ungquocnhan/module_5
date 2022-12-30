@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {CategoryService} from '../../service/category.service';
 
 @Component({
@@ -10,11 +10,15 @@ import {CategoryService} from '../../service/category.service';
 })
 export class CategoryEditComponent implements OnInit {
 
-  categoryForm: FormGroup = new FormGroup({});
+  categoryForm: FormGroup = new FormGroup({
+    id: new FormControl(),
+    name: new FormControl(),
+  });
   id: number = 0;
 
   constructor(private categoryService: CategoryService,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private route: Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = parseInt(<string> paramMap.get('id'));
       this.getCategory(this.id);
@@ -26,9 +30,7 @@ export class CategoryEditComponent implements OnInit {
 
   private getCategory(id: number) {
     return this.categoryService.findById(id).subscribe(category => {
-      this.categoryForm = new FormGroup({
-        name: new FormControl(category.name),
-      });
+      this.categoryForm.patchValue(category);
     });
   }
 
@@ -36,6 +38,7 @@ export class CategoryEditComponent implements OnInit {
     const category = this.categoryForm.value;
     this.categoryService.updateCategory(id, category).subscribe(() => {
       alert('Cập nhật thành công');
+      this.route.navigateByUrl("/category/list")
     }, e => {
       console.log(e);
     });

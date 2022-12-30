@@ -9,7 +9,10 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
   styleUrls: ['./category-delete.component.css']
 })
 export class CategoryDeleteComponent implements OnInit {
-  categoryForm: FormGroup = new FormGroup({});
+  categoryForm: FormGroup = new FormGroup({
+    id: new FormControl(),
+    name: new FormControl(),
+  });
   id: number = 0;
 
   constructor(private categoryService: CategoryService,
@@ -26,9 +29,7 @@ export class CategoryDeleteComponent implements OnInit {
 
   private getCategory(id: number) {
     return this.categoryService.findById(id).subscribe(category => {
-      this.categoryForm = new FormGroup({
-        name: new FormControl(category.name),
-      });
+      this.categoryForm.patchValue(category);
     });
   }
 

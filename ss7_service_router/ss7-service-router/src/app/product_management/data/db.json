@@ -1,0 +1,56 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Asus"
+    },
+    {
+      "id": 2,
+      "name": "Acer"
+    },
+    {
+      "id": 3,
+      "name": "Dell"
+    },
+    {
+      "id": 4,
+      "name": "Hp"
+    },
+    {
+      "name": "Apple",
+      "id": 5
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "IPhone 12",
+      "price": 2400000,
+      "description": "New"
+    },
+    {
+      "id": 2,
+      "name": "IPhone 11",
+      "price": 1560000,
+      "description": "Like new"
+    },
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "97%"
+    },
+    {
+      "id": 4,
+      "name": "IPhone 9",
+      "price": 7540000,
+      "description": "98%"
+    },
+    {
+      "id": 5,
+      "name": "Apple 14",
+      "price": 15000000,
+      "description": "A"
+    }
+  ]
+}
