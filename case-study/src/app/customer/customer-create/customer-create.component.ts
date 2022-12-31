@@ -5,6 +5,7 @@ import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/form
 import { differenceInYears } from 'date-fns';
 import {CustomerService} from '../customer.service';
 import {Router} from '@angular/router';
+import {CustomerTypeService} from '../customer-type.service';
 
 @Component({
   selector: 'app-customer-create',
@@ -72,20 +73,23 @@ export class CustomerCreateComponent implements OnInit {
     return this.customerForm.get('customerType');
   }
 
-  constructor(private customerService: CustomerService, private route: Router) {
-    this.customerTypes = this.customerService.getAllCustomerType();
+  constructor(private customerTypeService: CustomerTypeService,
+              private customerService : CustomerService,
+              private route: Router) {
+    this.customerTypeService.getAllCustomerType().subscribe(data => {
+      this.customerTypes = data;
+    });
   }
 
   ngOnInit(): void {
   }
 
-
   onSubmit() {
-    console.log(this.customerForm.value);
     let customer = this.customerForm.value;
-    this.customerService.saveCustomer(customer);
-    this.customerForm.reset();
-    this.route.navigateByUrl("/customer/list");
-    alert("Create success");
+    this.customerService.saveCustomer(customer).subscribe(() => {
+      this.customerForm.reset();
+      this.route.navigateByUrl("/customer/list");
+      alert("Create success");
+    });
   }
 }

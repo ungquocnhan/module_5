@@ -19,6 +19,9 @@ export class CustomerDeleteComponent implements OnInit {
   }
 
   deleteCustomer() {
-    this.customerService.deleteById(this.customer.id);
+    this.customerService.deleteById(this.customer.id).subscribe(() => {
+      window.location.reload();
+      alert("Delete success");
+    });
   }
 }

@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FacilityType} from '../facility-type';
 import {RentType} from '../rent-type';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {FacilityTypeService} from '../facility-type.service';
+import {RentTypeService} from '../rent-type.service';
+import {FacilityService} from '../facility.service';
 
 @Component({
   selector: 'app-facility-edit',
@@ -9,23 +13,42 @@ import {FormBuilder, FormGroup} from '@angular/forms';
   styleUrls: ['./facility-edit.component.css']
 })
 export class FacilityEditComponent implements OnInit {
-  facilityTypes: FacilityType[] = [{id: 1, name: 'Villa'}, {id: 2, name: 'House'}, {id: 3, name: 'Room'}];
-  rentTypes: RentType[] = [{id: 1, name: 'year'}, {id: 2, name: 'month'}, {id: 3, name: 'day'}, {id: 4, name: 'hour'}];
+  facilityTypes: FacilityType[] = [];
+  rentTypes: RentType[] = [];
 
-  facilityEditForm: FormGroup;
+  facilityEditForm: FormGroup = this.form.group({
+    name: (''),
+    area: (''),
+    cost: (''),
+    maxPeople: (''),
+    standardRoom: (''),
+    descriptionOtherConvenience: (''),
+    poolArea: (''),
+    numberOfFloor: (''),
+    facilityType: (''),
+    rentType: ('')
+  });
+  private id: number = 0;
 
-  constructor(private form: FormBuilder) {
-    this.facilityEditForm = this.form.group({
-      name: (''),
-      area: (''),
-      cost: (''),
-      maxPeople: (''),
-      standardRoom: (''),
-      descriptionOtherConvenience: (''),
-      poolArea: (''),
-      numberOfFloor: (''),
-      facilityType: (''),
-      rentType: ('')
+  constructor(private form: FormBuilder,
+              private activatedRoute: ActivatedRoute,
+              private facilityTypeService: FacilityTypeService,
+              private rentTypeService: RentTypeService,
+              private facilityService: FacilityService,
+              private route: Router) {
+    this.activatedRoute.paramMap.subscribe(data => {
+      this.id = parseInt(<string> data.get('id'));
+      this.getFacility(this.id);
+    });
+    this.facilityTypeService.getAllFacilityType().subscribe(data => {
+      this.facilityTypes = data;
+    }, error => {
+    }, () => {
+    });
+    this.rentTypeService.getAllRentType().subscribe(data => {
+      this.rentTypes = data;
+    }, error => {
+    }, () => {
     });
   }
 
@@ -72,7 +95,29 @@ export class FacilityEditComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    console.log(this.facilityEditForm.value);
+  private getFacility(id: number) {
+    return this.facilityService.findById(id).subscribe(data => {
+      this.facilityEditForm.patchValue(data);
+    });
+  }
+
+  onSubmit(id: number) {
+    let facility = this.facilityEditForm?.value;
+    this.facilityService.edit(id, facility).subscribe(() => {
+      this.route.navigateByUrl('/facility/list');
+      alert('Edit success');
+    });
+  }
+
+
+  compareFacilityType(item1: RentType, item2: RentType): boolean {
+    return item1 && item2 ? item1.id === item2.id : item1 === item2;
+  }
+
+  compareRentType(item1: FacilityType, item2: FacilityType): boolean {
+    return item1 && item2 ? item1.id === item2.id : item1 === item2;
   }
 }
+
+
+

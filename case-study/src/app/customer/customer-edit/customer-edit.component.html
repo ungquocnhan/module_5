@@ -131,8 +131,8 @@
 
             <div class="form-floating mb-3">
               <select class="form-select" name="customerType" id="customerType" formControlName="customerType"
-                      aria-label="Default select example">
-                <option [ngValue]="cType.id" *ngFor="let cType of customerTypes">{{cType.name}}</option>
+                      aria-label="Default select example" [compareWith]="compareCustomerType">
+                <option [ngValue]="cType" *ngFor="let cType of customerTypes">{{cType.name}}</option>
               </select>
               <label for="customerType">Customer type:</label>
               <div *ngIf="!customerType?.valid && (customerType?.dirty || customerType?.touched)">

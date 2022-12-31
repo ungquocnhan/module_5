@@ -121,10 +121,10 @@
             <div class="form-group mb-3">
               <label class="me-5">Gender:</label>
               <label class="radio-inline me-5" for="male"><input class="form-check-input me-2" type="radio"
-                                                                 name="gender" id="male" value="true"
+                                                                 name="gender" id="male"
                                                                  formControlName="gender">Male</label>
               <label class="radio-inline me-5" for="female"><input class="form-check-input me-2" type="radio"
-                                                                   name="gender" id="female" value="false"
+                                                                   name="gender" id="female"
                                                                    formControlName="gender">Female</label>
               <div *ngIf="!gender?.valid && (gender?.dirty || gender?.touched)">
                 <div [hidden]="!gender?.errors?.required" class="alert alert-danger">
@@ -136,7 +136,7 @@
             <div class="form-floating mb-3">
               <select class="form-select" name="customerType" id="customerType" formControlName="customerType"
                       aria-label="Default select example">
-                <option [ngValue]="cType.id" *ngFor="let cType of customerTypes">{{cType.name}}</option>
+                <option [ngValue]="cType" *ngFor="let cType of customerTypes">{{cType.name}}</option>
               </select>
               <label for="customerType">Customer type:</label>
               <div *ngIf="!customerType?.valid && (customerType?.dirty || customerType?.touched)">

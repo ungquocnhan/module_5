@@ -1,10 +1,9 @@
-<app-header></app-header>
+
 
 <div>
-
   <nav class="navbar sticky-top" style="background: #388CDB">
     <div class="container-fluid">
-      <a href="#" class="btn btn-sm" style="background: #E88246">Create facility</a>
+      <a class="btn btn-sm" style="background: #E88246" routerLink="/facility/create">Create facility</a>
       <h1>Facility Management</h1>
       <form class="d-flex">
         <input class="form-control-sm me-2" type="search" name="search" placeholder="Search">
@@ -19,7 +18,7 @@
         <img src="../../../assets/image/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-_Exterior-1-F.jpg" height="240"
              width="371" class="card-img-top" alt="...">
         <div class="card-body" >
-          <div class="media" style="height: 200px">
+          <div class="media" style="height: 240px">
             <h5 class="card-title">{{service.name}}</h5>
             <span class="card-text"><b>Area :</b></span>&nbsp;
             <a>{{service.area}}m<sup>2</sup></a><br>
@@ -43,17 +42,21 @@
               <span class="card-text"><b>Facility free :</b></span>&nbsp;
               <a>{{service.facilityFree}}</a><br>
             </div>
+            <span class="card-text"><b>Facility type :</b></span>&nbsp;
+            <a>{{service.facilityType.name}}</a><br>
+            <span class="card-text"><b>Rent type :</b></span>&nbsp;
+            <a>{{service.rentType.name}}</a><br>
           </div>
           <hr>
           <div class="d-flex justify-content-end">
-            <a class="p-2 bd-highlight btn btn-primary me-2">Edit</a>
-            <a class="p-2 bd-highlight btn btn-primary me-2">Delete</a>
+            <a class="p-2 bd-highlight btn btn-primary me-2" [routerLink]="['/facility/edit', service.id]">Edit</a>
+            <a class="p-2 bd-highlight btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="temp = service">Delete</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<app-facility-delete [facility]="temp"></app-facility-delete>
 
-<app-footer></app-footer>
 

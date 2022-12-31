@@ -2,6 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {FacilityType} from '../facility-type';
 import {RentType} from '../rent-type';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {FacilityTypeService} from '../facility-type.service';
+import {RentTypeService} from '../rent-type.service';
+import {FacilityService} from '../facility.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-facility-create',
@@ -9,12 +13,16 @@ import {FormBuilder, FormGroup} from '@angular/forms';
   styleUrls: ['./facility-create.component.css']
 })
 export class FacilityCreateComponent implements OnInit {
-  facilityTypes: FacilityType[] = [{id: 1, name: 'Villa'}, {id: 2, name: 'House'}, {id: 3, name: 'Room'}];
-  rentTypes: RentType[] = [{id: 1, name: 'year'}, {id: 2, name: 'month'}, {id: 3, name: 'day'}, {id: 4, name: 'hour'}];
+  facilityTypes: FacilityType[] = [];
+  rentTypes: RentType[] = [];
 
   facilityCreateForm: FormGroup;
 
-  constructor(private form: FormBuilder) {
+  constructor(private form: FormBuilder,
+              private facilityTypeService: FacilityTypeService,
+              private rentTypeService: RentTypeService,
+              private facilityService: FacilityService,
+              private route: Router) {
     this.facilityCreateForm = this.form.group({
       name: (''),
       area: (''),
@@ -27,6 +35,12 @@ export class FacilityCreateComponent implements OnInit {
       facilityType: (''),
       rentType: ('')
     });
+    this.facilityTypeService.getAllFacilityType().subscribe(data => {
+      this.facilityTypes = data;
+    }, error => {}, () => {});
+    this.rentTypeService.getAllRentType().subscribe(data => {
+      this.rentTypes = data;
+    }, error => {}, () => {});
   }
 
   get name() {
@@ -73,7 +87,12 @@ export class FacilityCreateComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.facilityCreateForm.value);
+    let facility = this.facilityCreateForm.value;
+    this.facilityService.save(facility).subscribe(() => {
+      this.facilityCreateForm.reset();
+      this.route.navigateByUrl("/facility/list");
+      alert("Create success");
+    });
   }
 
 }

@@ -1,10 +1,9 @@
-<app-header></app-header>
 
 <body>
 <div>
   <nav class="navbar sticky-top" style="background: #388CDB">
     <div class="container-fluid">
-      <a href="#" class="btn btn-sm" style="background: #E88246">Back list facility</a>
+      <a class="btn btn-sm" style="background: #E88246" routerLink="/facility/list">Back list facility</a>
       <h1>Facility Management</h1>
       <form class="d-flex">
         <input class="form-control-sm me-2" type="search" name="search" placeholder="Search">
@@ -22,7 +21,7 @@
               <div class="h1 fw-light">Edit facility</div>
             </div>
 
-            <form [formGroup]="facilityEditForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="facilityEditForm" (ngSubmit)="onSubmit(id)">
               <div class="form-floating mb-3" hidden>
                 <input type="text" class="form-control" id="id" placeholder="Name facility" name="id" formControlName="id">
                 <label for="id">Id</label>
@@ -75,15 +74,15 @@
               </div>
 
               <div class="form-floating mb-3">
-                <select class="form-select" aria-label="Default select example" id="rentType" name="rentType" formControlName="rentType">
-                  <option [ngValue]="rType.id" *ngFor="let rType of rentTypes">{{rType.name}}</option>
+                <select class="form-select" aria-label="Default select example" id="rentType" name="rentType" formControlName="rentType" [compareWith]="compareRentType">
+                  <option [ngValue]="rType" *ngFor="let rType of rentTypes">{{rType.name}}</option>
                 </select>
                 <label for="rentType">Rent type:</label>
               </div>
 
               <div class="form-floating mb-3">
-                <select class="form-select" aria-label="Default select example" id="facilityType" name="facilityType" formControlName="facilityType">
-                  <option [ngValue]="fType.id" *ngFor="let fType of facilityTypes">{{fType.name}}</option>
+                <select class="form-select" aria-label="Default select example" id="facilityType" name="facilityType" formControlName="facilityType" [compareWith]="compareFacilityType">
+                  <option [ngValue]="fType" *ngFor="let fType of facilityTypes">{{fType.name}}</option>
                 </select>
                 <label for="facilityType">Facility type:</label>
               </div>
@@ -100,5 +99,4 @@
   </div>
 </div>
 
-<app-footer></app-footer>
 
