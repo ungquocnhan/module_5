@@ -3,6 +3,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from '../../service/product.service';
 import {Product} from '../../model/product';
 import {FormControl, FormGroup} from '@angular/forms';
+import {CategoryService} from '../../service/category.service';
+import {Category} from '../../model/category';
 
 @Component({
   selector: 'app-product-edit',
@@ -16,16 +18,22 @@ export class ProductEditComponent implements OnInit {
     name: new FormControl(),
     price: new FormControl(),
     description: new FormControl(),
+    category: new FormControl()
   });
   id: number = 0;
+  categories: Category[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
               private productService: ProductService,
+              private categoryService: CategoryService,
               private route: Router) {
     this.activatedRoute.paramMap.subscribe(data => {
       this.id = parseInt(<string> data.get('id'));
       this.getProduct(this.id);
     });
+    this.categoryService.getAll().subscribe(data => {
+      this.categories = data;
+    })
   }
 
   ngOnInit(): void {
@@ -46,5 +54,9 @@ export class ProductEditComponent implements OnInit {
       console.log(error);
     });
 
+  }
+
+  compareCategory(item1: Category, item2: Category): boolean {
+    return item1 && item2 ? item1.id === item2.id : item1 === item2;
   }
 }

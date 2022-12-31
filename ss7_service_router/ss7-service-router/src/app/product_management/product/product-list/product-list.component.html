@@ -15,8 +15,9 @@
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
-    <td><button type="button" [routerLink]="['/product/edit', product.id]">Edit</button></td>
-    <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="temp = product">Delete</button></td>
+    <td>{{product.category?.name}}</td>
+    <td><button class="btn btn-primary btn-sm" type="button" [routerLink]="['/product/edit', product.id]">Edit</button></td>
+    <td><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="temp = product">Delete</button></td>
   </tr>
 </table>
 <app-product-delete [product]="temp"></app-product-delete>

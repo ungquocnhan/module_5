@@ -1,7 +1,7 @@
 <h1>Cập nhật sản phẩm</h1>
 <form [formGroup]="productFormEdit" (ngSubmit)="editProduct(id)">
   <table>
-    <tr>
+    <tr hidden>
       <td>Mã sản phẩm:</td>
       <td><input type="number" formControlName="id"></td>
     </tr>
@@ -16,6 +16,15 @@
     <tr>
       <td>Mô tả về sản phẩm</td>
       <td><input type="text" formControlName="description"></td>
+    </tr>
+    <tr>
+      <td>Category</td>
+      <td>
+        <select class="form-select" name="category" id="category"
+                aria-label="Default select example" formControlName="category" [compareWith]="compareCategory">
+          <option [ngValue]="category" *ngFor="let category of categories">{{category.name}}</option>
+        </select>
+      </td>
     </tr>
     <tr>
       <td></td>

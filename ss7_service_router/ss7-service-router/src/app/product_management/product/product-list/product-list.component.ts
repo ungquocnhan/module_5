@@ -12,11 +12,9 @@ import {CategoryService} from '../../service/category.service';
 export class ProductListComponent implements OnInit {
   temp: Product = {};
   products: Product[] = [];
-  categories: Category[] = [];
-  constructor(private productService: ProductService,
-              private categoryService: CategoryService) {
+  constructor(private productService: ProductService) {
     this.getAll();
-    this.getAllCategory();
+
   }
 
   ngOnInit(): void {
@@ -27,9 +25,4 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  getAllCategory() {
-    this.categoryService.getAll().subscribe(categories => {
-      this.categories = categories;
-    });
-  }
 }
