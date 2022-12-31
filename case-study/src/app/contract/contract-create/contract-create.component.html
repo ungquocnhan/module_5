@@ -22,7 +22,7 @@
           </div>
 
           <form [formGroup]="contractCreateForm" (ngSubmit)="onSubmit()">
-            <div formGroupName="contractDate">
+<!--            <div formGroupName="contractDate">-->
             <div class="form-floating mb-3">
               <input type="date" class="form-control" id="startDate" name="startDate" formControlName="startDate">
               <label for="startDate">Date start </label>
@@ -32,7 +32,7 @@
               <input type="date" class="form-control" id="endDate" name="endDate" formControlName="endDate">
               <label for="endDate">Date end</label>
             </div>
-            </div>
+<!--            </div>-->
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="deposit" name="deposit" placeholder="Deposit" formControlName="deposit">
               <label for="deposit">Deposit</label>

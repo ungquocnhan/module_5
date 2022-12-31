@@ -25,10 +25,12 @@ export class ContractCreateComponent implements OnInit {
               private facilityService: FacilityService,
               private router: Router) {
     this.contractCreateForm = this.form.group({
-      contractDate: this.form.group({
-        startDate: (''),
-        endDate: ('')
-      }),
+      // contractDate: this.form.group({
+      //   startDate: (''),
+      //   endDate: ('')
+      // }),
+      startDate: (''),
+      endDate: (''),
       deposit: (''),
       customer: (''),
       employee: (''),
