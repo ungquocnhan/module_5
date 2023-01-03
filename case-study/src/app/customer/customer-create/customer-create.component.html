@@ -121,10 +121,10 @@
             <div class="form-group mb-3">
               <label class="me-5">Gender:</label>
               <label class="radio-inline me-5" for="male"><input class="form-check-input me-2" type="radio"
-                                                                 name="gender" id="male"
+                                                                 name="gender" id="male" [value]="true"
                                                                  formControlName="gender">Male</label>
               <label class="radio-inline me-5" for="female"><input class="form-check-input me-2" type="radio"
-                                                                   name="gender" id="female"
+                                                                   name="gender" id="female" [value]="false"
                                                                    formControlName="gender">Female</label>
               <div *ngIf="!gender?.valid && (gender?.dirty || gender?.touched)">
                 <div [hidden]="!gender?.errors?.required" class="alert alert-danger">

@@ -6,6 +6,8 @@ import {ContractService} from '../contract.service';
 import {CustomerService} from '../../customer/customer.service';
 import {FacilityService} from '../../facility/facility.service';
 import {Router} from '@angular/router';
+import {EmployeeService} from '../../employee/employee.service';
+import {Employee} from '../../employee/employee';
 
 @Component({
   selector: 'app-contract-create',
@@ -18,19 +20,21 @@ export class ContractCreateComponent implements OnInit {
   customers: Customer[] = [];
 
   facilities: Facility[] = [];
+  employees: Employee[] = [];
 
   constructor(private form: FormBuilder,
               private contractService: ContractService,
               private customerService: CustomerService,
               private facilityService: FacilityService,
+              private employeeService: EmployeeService,
               private router: Router) {
     this.contractCreateForm = this.form.group({
       // contractDate: this.form.group({
       //   startDate: (''),
       //   endDate: ('')
       // }),
-      startDate: (''),
-      endDate: (''),
+      dateStart: (''),
+      dateEnd: (''),
       deposit: (''),
       customer: (''),
       employee: (''),
@@ -42,12 +46,15 @@ export class ContractCreateComponent implements OnInit {
     this.facilityService.getAll().subscribe(data => {
       this.facilities = data;
     });
+    this.employeeService.getAll().subscribe(data => {
+      this.employees = data;
+    });
   }
 
-  get startDate(){
-    return this.contractCreateForm.get('startDate');
-  }get endDate(){
-    return this.contractCreateForm.get('endDate');
+  get dateStart(){
+    return this.contractCreateForm.get('dateStart');
+  }get dateEnd(){
+    return this.contractCreateForm.get('dateEnd');
   }get deposit(){
     return this.contractCreateForm.get('deposit');
   }get customer(){
@@ -63,6 +70,7 @@ export class ContractCreateComponent implements OnInit {
 
   onSubmit() {
     let contract = this.contractCreateForm.value;
+    console.log(this.contractCreateForm.value);
     this.contractService.save(contract).subscribe(() =>{
       this.contractCreateForm.reset();
       this.router.navigateByUrl("/contract/list");

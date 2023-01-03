@@ -7,6 +7,7 @@ import {FacilityCreateComponent} from './facility-create/facility-create.compone
 import {FacilityEditComponent} from './facility-edit/facility-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FacilityDeleteComponent } from './facility-delete/facility-delete.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -16,10 +17,11 @@ import { FacilityDeleteComponent } from './facility-delete/facility-delete.compo
     FacilityEditComponent,
     FacilityDeleteComponent
   ],
-  imports: [
-    CommonModule,
-    FacilityRoutingModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        FacilityRoutingModule,
+        ReactiveFormsModule,
+        NgxPaginationModule
+    ]
 })
 export class FacilityModule { }

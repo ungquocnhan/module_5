@@ -10,6 +10,10 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { DictionaryPageComponent } from './exercise_dictionary/dictionary-page/dictionary-page.component';
 import { DictionaryDetailComponent } from './exercise_dictionary/dictionary-detail/dictionary-detail.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {ImageGalleryModule} from "./practice_gallery/image-gallery/image-gallery.module";
+import {GalleryConfig} from "./practice_gallery/image-gallery/token";
+import {ImgSliderModule} from './exercise_image_slide/img-slider/img-slider.module';
+import {SharedModule} from './product_management/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -25,9 +29,13 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    ImageGalleryModule,
+    ImgSliderModule,
+    SharedModule
   ],
   providers: [
-    HttpClient
+    HttpClient,
+    {provide: GalleryConfig, useValue: 3}
   ],
   bootstrap: [AppComponent]
 })

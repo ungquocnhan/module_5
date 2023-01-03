@@ -32,15 +32,20 @@ export class FacilityCreateComponent implements OnInit {
       descriptionOtherConvenience: (''),
       poolArea: (''),
       numberOfFloor: (''),
+      facilityFree: (''),
       facilityType: (''),
       rentType: ('')
     });
     this.facilityTypeService.getAllFacilityType().subscribe(data => {
       this.facilityTypes = data;
-    }, error => {}, () => {});
+    }, error => {
+    }, () => {
+    });
     this.rentTypeService.getAllRentType().subscribe(data => {
       this.rentTypes = data;
-    }, error => {}, () => {});
+    }, error => {
+    }, () => {
+    });
   }
 
   get name() {
@@ -90,8 +95,8 @@ export class FacilityCreateComponent implements OnInit {
     let facility = this.facilityCreateForm.value;
     this.facilityService.save(facility).subscribe(() => {
       this.facilityCreateForm.reset();
-      this.route.navigateByUrl("/facility/list");
-      alert("Create success");
+      this.route.navigateByUrl('/facility/list');
+      alert('Create success');
     });
   }
 

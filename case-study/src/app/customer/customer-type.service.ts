@@ -7,7 +7,8 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CustomerTypeService {
-  CUSTOMER_TYPE_URL = "http://localhost:3000/customerTypes";
+  // CUSTOMER_TYPE_URL = "http://localhost:3000/customerTypes";
+  CUSTOMER_TYPE_URL = "http://localhost:8080/customerTypes";
 
   constructor(private httpClient: HttpClient) { }
 

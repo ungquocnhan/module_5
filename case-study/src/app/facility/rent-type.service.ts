@@ -8,7 +8,8 @@ import {RentType} from './rent-type';
   providedIn: 'root'
 })
 export class RentTypeService {
-  RENT_TYPE_URL = "http://localhost:3000/rentType";
+  // RENT_TYPE_URL = "http://localhost:3000/rentType";
+  RENT_TYPE_URL = "http://localhost:8080/rentTypes";
   constructor(private httpClient: HttpClient) { }
 
   getAllRentType(): Observable<RentType[]> {

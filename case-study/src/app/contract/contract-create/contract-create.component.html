@@ -1,4 +1,4 @@
-<app-header></app-header>
+
 
 <body>
 <nav class="navbar sticky-top" style="background: #388CDB">
@@ -24,13 +24,13 @@
           <form [formGroup]="contractCreateForm" (ngSubmit)="onSubmit()">
 <!--            <div formGroupName="contractDate">-->
             <div class="form-floating mb-3">
-              <input type="date" class="form-control" id="startDate" name="startDate" formControlName="startDate">
-              <label for="startDate">Date start </label>
+              <input type="date" class="form-control" id="dateStart" name="dateStart" formControlName="dateStart">
+              <label for="dateStart">Date start </label>
             </div>
 
             <div class="form-floating mb-3">
-              <input type="date" class="form-control" id="endDate" name="endDate" formControlName="endDate">
-              <label for="endDate">Date end</label>
+              <input type="date" class="form-control" id="dateEnd" name="dateEnd" formControlName="dateEnd">
+              <label for="dateEnd">Date end</label>
             </div>
 <!--            </div>-->
             <div class="form-floating mb-3">
@@ -45,15 +45,12 @@
               <label for="customer">Customer:</label>
             </div>
 
-<!--            <div class="form-floating mb-3">-->
-<!--              <select class="form-select" name="employee" id="employee" aria-label="Default select example" formControlName="employee">-->
-<!--&lt;!&ndash;                <option [ngValue]="employee.id" *ngFor="let employee of emplyees">{{employee.name}}</option>&ndash;&gt;-->
-<!--                <option selected value="">Employee</option>-->
-<!--                <option value="1">Employee1</option>-->
-<!--                <option value="2">Employee1</option>-->
-<!--              </select>-->
-<!--              <label for="employee">Employee:</label>-->
-<!--            </div>-->
+            <div class="form-floating mb-3">
+              <select class="form-select" name="employee" id="employee" aria-label="Default select example" formControlName="employee">
+                <option [ngValue]="employee" *ngFor="let employee of employees">{{employee.name}}</option>
+              </select>
+              <label for="employee">Employee:</label>
+            </div>
 
             <div class="form-floating mb-3">
               <select class="form-select" name="facility" id="facility"
@@ -74,5 +71,5 @@
   </div>
 </div>
 
-<app-footer></app-footer>
+
 

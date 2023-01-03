@@ -27,7 +27,12 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let customer of customers; let i = index">
+  <tr *ngFor="let customer of customers | paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                }; let i = index">
     <th scope="row">{{i + 1}}</th>
     <td>{{customer.name}}</td>
     <td>{{customer.birthday | date: "dd/MM/yyyy"}}</td>
@@ -50,6 +55,16 @@
   </tr>
   </tbody>
 </table>
+
+<div class="d-flex justify-content-end">
+  <pagination-controls
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableDataChange($event)"
+  >
+  </pagination-controls>
+</div>
+
 <app-customer-delete [customer]="temp"></app-customer-delete>
 
 

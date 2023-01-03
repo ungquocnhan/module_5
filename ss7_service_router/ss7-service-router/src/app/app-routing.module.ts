@@ -8,8 +8,10 @@ import {ProductCreateComponent} from './product_management/product/product-creat
 import {DictionaryPageComponent} from './exercise_dictionary/dictionary-page/dictionary-page.component';
 import {DictionaryDetailComponent} from './exercise_dictionary/dictionary-detail/dictionary-detail.component';
 import {ProductEditComponent} from './product_management/product/product-edit/product-edit.component';
+import {NavBarComponent} from './product_management/shared/nav-bar/nav-bar.component';
 
 const routes: Routes = [
+
   {
     path: 'timelines',
     component: TimelinesComponent

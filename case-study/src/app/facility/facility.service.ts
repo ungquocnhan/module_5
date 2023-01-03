@@ -8,7 +8,8 @@ import {Facility} from './facility';
   providedIn: 'root'
 })
 export class FacilityService {
-  FACILITY_URL = "http://localhost:3000/facilities";
+  // FACILITY_URL = "http://localhost:3000/facilities";
+  FACILITY_URL = "http://localhost:8080/facilities";
 
   constructor(private httpClient: HttpClient) { }
 

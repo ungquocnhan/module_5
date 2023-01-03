@@ -18,13 +18,28 @@ export class FacilityListComponent implements OnInit {
 
   facilities: Facility[] = [];
 
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 6;
+
+
   constructor(private facilityService: FacilityService) {
+    this.getAllFacility();
+  }
+
+  private getAllFacility() {
     this.facilityService.getAll().subscribe(data => {
       this.facilities = data;
-    }, error => {}, () => {});
+    }, error => {
+    }, () => {
+    });
   }
 
   ngOnInit(): void {
   }
 
+  onTableDataChange(event: number) {
+    this.page = event;
+    this.getAllFacility();
+  }
 }

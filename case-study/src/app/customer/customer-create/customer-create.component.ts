@@ -86,6 +86,7 @@ export class CustomerCreateComponent implements OnInit {
 
   onSubmit() {
     let customer = this.customerForm.value;
+    console.log(customer);
     this.customerService.saveCustomer(customer).subscribe(() => {
       this.customerForm.reset();
       this.route.navigateByUrl("/customer/list");

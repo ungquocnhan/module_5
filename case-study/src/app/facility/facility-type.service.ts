@@ -8,7 +8,8 @@ import {FacilityType} from './facility-type';
   providedIn: 'root'
 })
 export class FacilityTypeService {
-  FACILITY_TYPE_URL = "http://localhost:3000/facilityType";
+  // FACILITY_TYPE_URL = "http://localhost:3000/facilityType";
+  FACILITY_TYPE_URL = "http://localhost:8080/facilityTypes";
   constructor(private httpClient: HttpClient) { }
 
   getAllFacilityType(): Observable<FacilityType[]> {

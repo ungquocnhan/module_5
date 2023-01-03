@@ -1,15 +1,21 @@
-
 <body>
 <nav class="navbar sticky-top" style="background: #388CDB">
   <div class="container-fluid">
     <a class="btn btn-sm" style="background: #E88246" routerLink="/contract/create">Create contract</a>
     <h1>Contract Management</h1>
-    <form class="d-flex">
-      <input class="form-control-sm me-2" type="search" name="search" placeholder="Search">
+    <form class="d-flex" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+      <input class="form-control-sm me-2" type="text" name="name" placeholder="Search Deposit" formControlName="name">
+      <div>
+        <select class="form-select" name="customer" id="customer" aria-label="Default select example" formControlName="customer">
+          <option value="">Customer</option>
+          <option [ngValue]="customer" *ngFor="let customer of customers">{{customer.name}}</option>
+        </select>
+      </div>
       <button class="btn btn-sm" style="background: #E8C431" type="submit">Search</button>
     </form>
   </div>
 </nav>
+
 
 <table class="table table-success table-striped">
   <thead>
@@ -25,12 +31,15 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let contract of contracts; let i = index">
-    <th scope="row">{{i + 1}}</th>
+  <tr *ngFor="let contract of contracts | paginate: {
+                  itemsPerPage: 6,
+                  currentPage: page
+  }; let i = index">
+    <th scope="row">{{i + 1 + itemPerPage * (page - 1)}}</th>
     <td>{{contract.facility?.name}}</td>
     <td>{{contract.customer?.name}}</td>
-    <td>{{contract.startDate | date: "dd/MM/yyyy" }}</td>
-    <td>{{contract.endDate | date: "dd/MM/yyyy"}}</td>
+    <td>{{contract.dateStart | date: "dd/MM/yyyy" }}</td>
+    <td>{{contract.dateEnd | date: "dd/MM/yyyy"}}</td>
     <td>
       <div *ngIf="contract.deposit">
         <span>{{contract.deposit | currency: "VND"}}</span>
@@ -49,6 +58,13 @@
   </tr>
   </tbody>
 </table>
+
+<div class="d-flex justify-content-end">
+  <pagination-controls
+    (pageChange)="page = $event">
+  </pagination-controls>
+</div>
+
 
 
 

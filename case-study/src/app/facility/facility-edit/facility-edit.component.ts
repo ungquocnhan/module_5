@@ -15,6 +15,7 @@ import {FacilityService} from '../facility.service';
 export class FacilityEditComponent implements OnInit {
   facilityTypes: FacilityType[] = [];
   rentTypes: RentType[] = [];
+  id: number = 0;
 
   facilityEditForm: FormGroup = this.form.group({
     name: (''),
@@ -25,10 +26,10 @@ export class FacilityEditComponent implements OnInit {
     descriptionOtherConvenience: (''),
     poolArea: (''),
     numberOfFloor: (''),
+    facilityFree: (''),
     facilityType: (''),
     rentType: ('')
   });
-  private id: number = 0;
 
   constructor(private form: FormBuilder,
               private activatedRoute: ActivatedRoute,
