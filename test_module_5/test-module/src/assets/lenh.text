@@ -1,0 +1,31 @@
+npm i date-fns -s
+json-server --watch db.json
+npm i ngx-toastr@13.2.1
+npm install @angular/animations@10.2.5
+
+
+GET    /posts
+GET    /posts/1
+POST   /posts
+PUT    /posts/1
+PATCH  /posts/1
+DELETE /posts/1
+*Paginate
+Use _page and optionally _limit to paginate returned data.
+In the Link header you'll get first, prev, next and last links.
+GET /posts?_page=7
+GET /posts?_page=7&_limit=20
+10 items are returned by default
+*Sort
+Add _sort and _order (ascending order by default)
+GET /posts?_sort=views&_order=asc
+GET /posts/1/comments?_sort=votes&_order=asc
+For multiple fields, use the following format:
+GET /posts?_sort=user,views&_order=desc,asc
+*Operators
+Add _gte or _lte for getting a range
+GET /posts?views_gte=10&views_lte=20
+Add _ne to exclude a value
+GET /posts?id_ne=1
+Add _like to filter (RegExp supported)
+GET /posts?title_like=server

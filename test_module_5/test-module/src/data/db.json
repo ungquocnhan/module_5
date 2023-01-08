@@ -1,0 +1,131 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Sting",
+      "placeOfProduction": "Viet A",
+      "cost": 250000,
+      "unit": "thùng"
+    },
+    {
+      "id": 2,
+      "name": "Tiger",
+      "placeOfProduction": "Viet B",
+      "cost": 220000,
+      "unit": "thùng"
+    },
+    {
+      "id": 3,
+      "name": "Oshi",
+      "placeOfProduction": "Viet C",
+      "cost": 100000,
+      "unit": "thùng"
+    },
+    {
+      "id": 4,
+      "name": "Dầu gội",
+      "placeOfProduction": "Viet D",
+      "cost": 300000,
+      "unit": "thùng"
+    },
+    {
+      "id": 5,
+      "name": "Larue",
+      "placeOfProduction": "Viet B",
+      "cost": 210000,
+      "unit": "thùng"
+    }
+  ],
+  "consignments": [
+    {
+      "id": 1,
+      "code": "LH-0001",
+      "product": {
+        "id": 1,
+        "name": "Sting",
+        "placeOfProduction": "Viet A",
+        "cost": 250000,
+        "unit": "thùng"
+      },
+      "amount": 5,
+      "importDate": "2020-12-28",
+      "productionDate": "2020-09-10",
+      "expirationDate": "2021-09-10"
+    },
+    {
+      "id": 2,
+      "code": "LH-0002",
+      "product": {
+        "id": 2,
+        "name": "Tiger",
+        "placeOfProduction": "Viet B",
+        "cost": 220000,
+        "unit": "thùng"
+      },
+      "amount": 5,
+      "importDate": "2020-11-01",
+      "productionDate": "2020-10-15",
+      "expirationDate": "2021-10-15"
+    },
+    {
+      "id": 3,
+      "code": "LH-0003",
+      "product": {
+        "id": 3,
+        "name": "Oshi",
+        "placeOfProduction": "Viet C",
+        "cost": 100000,
+        "unit": "thùng"
+      },
+      "amount": 5,
+      "importDate": "2020-12-01",
+      "productionDate": "2020-09-14",
+      "expirationDate": "2021-09-14"
+    },
+    {
+      "id": 4,
+      "code": "LH-0004",
+      "product": {
+        "id": 4,
+        "name": "Dầu gội",
+        "placeOfProduction": "Viet D",
+        "cost": 300000,
+        "unit": "thùng"
+      },
+      "amount": 5,
+      "importDate": "2020-12-28",
+      "productionDate": "2020-09-10",
+      "expirationDate": "2021-09-10"
+    },
+    {
+      "id": 5,
+      "code": "LH-0005",
+      "product": {
+        "id": 5,
+        "name": "Larue",
+        "placeOfProduction": "Viet B",
+        "cost": 210000,
+        "unit": "thùng"
+      },
+      "amount": 5,
+      "importDate": "2020-12-28",
+      "productionDate": "2020-09-10",
+      "expirationDate": "2021-09-10"
+    },
+    {
+      "code": "LH-0009",
+      "product": {
+        "id": 2,
+        "name": "Tiger",
+        "placeOfProduction": "Viet B",
+        "cost": 220000,
+        "unit": "thùng"
+      },
+      "amount": "5",
+      "importDate": "2023-01-06",
+      "productionDate": "2023-01-14",
+      "expirationDate": "2023-01-27",
+      "id": 6
+    }
+  ]
+}

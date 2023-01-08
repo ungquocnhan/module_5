@@ -1,0 +1,81 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "code": "PM-1234",
+      "name": "Iphone 12",
+      "dateProduct": "2022-12-12",
+      "description": "New",
+      "manufacture": {
+        "id": 1,
+        "name": "Apple"
+      }
+    },
+    {
+      "id": 2,
+      "code": "PM-1235",
+      "name": "Zenfone 8",
+      "dateProduct": "2022-12-12",
+      "description": "New",
+      "manufacture": {
+        "id": 2,
+        "name": "Asus"
+      }
+    },
+    {
+      "id": 3,
+      "code": "PM-1236",
+      "name": "Samsung Fold",
+      "dateProduct": "2022-12-12",
+      "description": "New",
+      "manufacture": {
+        "id": 3,
+        "name": "Samsung"
+      }
+    },
+    {
+      "id": 4,
+      "code": "PM-1237",
+      "name": "Xiaomi 12",
+      "dateProduct": "2022-12-12",
+      "description": "New",
+      "manufacture": {
+        "id": 4,
+        "name": "Xiaomi"
+      }
+    },
+    {
+      "id": 5,
+      "code": "PM-1238",
+      "name": "Oppo X50",
+      "dateProduct": "2022-12-12",
+      "description": "New",
+      "manufacture": {
+        "id": 5,
+        "name": "Oppo"
+      }
+    }
+  ],
+  "manufacture": [
+    {
+      "id": 1,
+      "name": "Apple"
+    },
+    {
+      "id": 2,
+      "name": "Asus"
+    },
+    {
+      "id": 3,
+      "name": "Samsung"
+    },
+    {
+      "id": 4,
+      "name": "Xiaomi"
+    },
+    {
+      "id": 5,
+      "name": "Oppo"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<table class="table table-success table-striped">
+  <thead>
+  <tr>
+    <th scope="col">STT</th>
+    <th scope="col">Code</th>
+    <th scope="col">Name</th>
+    <th scope="col">Date product</th>
+    <th scope="col">Description</th>
+    <th scope="col">Manufacture</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products | paginate
+              : {
+                  itemsPerPage: 5,
+                  currentPage: page
+                }; let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{product.code}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.dateProduct | date: 'dd/MM/yyyy'}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.manufacture?.name}}</td>
+    <td>
+      <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/product/edit', product.id]">
+        Edit
+      </button>
+    </td>
+    <td>
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-end">
+  <pagination-controls (pageChange)="page = ($event)"></pagination-controls>
+
+</div>

@@ -1,0 +1,64 @@
+<div>
+
+
+  <div class="container-fluid">
+    <form class="d-flex justify-content-end">
+      <input class="form-control-sm me-2" type="search" name="code" #code placeholder="Code product">
+      <input class="form-control-sm me-2" type="search" name="importDate" #importDate placeholder="Date import">
+      <div>
+        <select class="form-select" name="product" #product id="product" aria-label="Default select example">
+          <option value="">Product</option>
+          <option [ngValue]="pro" *ngFor="let pro of products">{{pro.name}}</option>
+        </select>
+      </div>
+      <button class="btn btn-sm" style="background: #E8C431" type="button" (click)="search(code.value, importDate.value, product.value)">Search</button>
+    </form>
+  </div>
+
+
+  <table class="table table-success table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Mã lô hàng</th>
+      <th scope="col">Tên sản phẩm</th>
+      <th scope="col">Giá tiền</th>
+      <th scope="col">Số lượng</th>
+      <th scope="col">Đơn vị</th>
+      <th scope="col">Ngày nhập hàng</th>
+      <th scope="col">Ngày sản xuất</th>
+      <th scope="col">Ngày hết hạn</th>
+      <th scope="col">Sửa</th>
+      <th scope="col">Xóa</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let consignment of consignments">
+      <td>{{consignment.code}}</td>
+      <td>{{consignment.product?.name}}</td>
+      <td>{{consignment.product?.cost | currency: 'VND'}}</td>
+      <td>{{consignment.amount}}</td>
+      <td>{{consignment.product?.unit}}</td>
+      <td>{{consignment.importDate}}</td>
+      <td>{{consignment.productionDate}}</td>
+      <td>{{consignment.expirationDate}}</td>
+      <td>
+        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal"
+                (click)="edit(consignment.id)">
+          Sửa
+        </button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                (click)="temp = consignment">
+          Xóa
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <mat-paginator [pageSize]="2" [length]="totalElements" (page)="nextPage($event)"></mat-paginator>
+</div>
+
+
+<app-consignment-delete [consignment]="temp" (eventDelete)="reload()"></app-consignment-delete>
+<app-consignment-edit (eventEdit)="reload()"></app-consignment-edit>

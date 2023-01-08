@@ -28,6 +28,7 @@
     <th scope="col">Deposit</th>
     <th scope="col">Total</th>
     <th scope="col">Attach Facility</th>
+    <th scope="col">Delete</th>
   </tr>
   </thead>
   <tbody>
@@ -55,6 +56,11 @@
         List Attach Facility
       </button>
     </td>
+    <td>
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="temp = contract">
+        Delete
+      </button>
+    </td>
   </tr>
   </tbody>
 </table>
@@ -65,6 +71,6 @@
   </pagination-controls>
 </div>
 
-
+<app-contract-delete [contract]="temp" (eventDelete)="reload()"></app-contract-delete>
 
 

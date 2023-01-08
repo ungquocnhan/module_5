@@ -37,4 +37,14 @@ export class CustomerListComponent implements OnInit {
     this.page = event;
     this.getAllCustomer();
   }
+
+  // search(name: string) {
+  //   console.log(name);
+  //   this.customerService.getAll(name).subscribe(data => {
+  //     this.customers = data;
+  //   }, error => {
+  //   }, () => {
+  //   });
+  //
+  // }
 }

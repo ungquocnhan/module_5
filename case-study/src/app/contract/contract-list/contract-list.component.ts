@@ -21,7 +21,9 @@ export class ContractListComponent implements OnInit {
     this.getAllContracts();
     this.customerService.getAll().subscribe(data => {
       this.customers = data;
-    }, error => {}, () => {});
+    }, error => {
+    }, () => {
+    });
   }
 
   private getAllContracts() {
@@ -33,11 +35,12 @@ export class ContractListComponent implements OnInit {
   }
 
   searchForm: FormGroup = new FormGroup({
-    name: new FormControl(),
-    customer: new FormControl()
+    name: new FormControl(''),
+    customer: new FormControl('')
   });
   page: number = 1;
   itemPerPage: number = 6;
+  temp: Contract = {};
 
 
   ngOnInit(): void {
@@ -46,19 +49,39 @@ export class ContractListComponent implements OnInit {
 
 
   onSearch() {
-    console.log(this.searchForm.value.customer.name);
-    alert(this.searchForm.value.name);
-    let result = this.searchForm.value.name;
-    let resultCustomer = this.searchForm.value.customer.name
-    if (result == '') {
-      this.getAllContracts();
-    } else {
-      this.contractService.getAll(result, resultCustomer).subscribe(data => {
-        console.log(data);
+    let resultCustomer = this.searchForm.value.customer?.id;
+    let resultName = this.searchForm.value.name;
+    if (resultName == null && resultCustomer != '') {
+      this.contractService.getAll(null, resultCustomer).subscribe(data => {
         this.contracts = data;
       }, error => {
       }, () => {
       });
+    } else if (resultName == '' && resultCustomer != '') {
+      this.contractService.getAll(null, resultCustomer).subscribe(data => {
+        this.contracts = data;
+      }, error => {
+      }, () => {
+      });
+    } else if (resultName == '') {
+      this.getAllContracts();
+    } else {
+      this.contractService.getAll(resultName, resultCustomer).subscribe(data => {
+        this.contracts = data;
+      }, error => {
+      }, () => {
+      });
+
     }
+    // this.contractService.getAll(resultName, resultCustomer).subscribe(data => {
+    //   this.contracts = data;
+    // }, error => {
+    // }, () => {
+    // });
+  }
+
+
+  reload() {
+    this.getAllContracts();
   }
 }

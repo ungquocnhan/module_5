@@ -8,8 +8,8 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class CustomerService {
-  // CUSTOMER_URL = "http://localhost:3000/customer";
-  CUSTOMER_URL = "http://localhost:8080/customers";
+  CUSTOMER_URL = "http://localhost:3000/customer";
+  // CUSTOMER_URL = "http://localhost:8080/customers";
 
   constructor(private httpClient: HttpClient) {
   }

@@ -1,0 +1,101 @@
+<form [formGroup]="formEdit" (ngSubmit)="editConsignment()">
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Sửa</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-floating mb-3" hidden>
+            <input type="text" class="form-control" id="id" placeholder="Id"
+                   formControlName="id">
+            <label for="id">Id</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="code" placeholder="Mã lô hàng"
+                   formControlName="code">
+            <label for="code">Mã lô hàng</label>
+            <div *ngIf="!code?.valid && (code?.dirty || code?.touched)">
+              <div [hidden]="!code?.errors?.required" class="alert alert-danger">
+                Mã lô hàng không được để trống.
+              </div>
+              <div [hidden]="!code?.errors?.pattern" class="alert alert-danger">
+                Mã lô hàng phải đúng định dạng - LH-XXXX (X số từ 0 - 9).
+              </div>
+            </div>
+          </div>
+
+          <div class="form-floating mb-3">
+            <select class="form-select" id="product" formControlName="product" [compareWith]="compareProduct"
+                    aria-label="Default select example">
+              <option [ngValue]="pro" *ngFor="let pro of products">{{pro.name}}</option>
+            </select>
+            <label for="product">Sản phẩm</label>
+            <div *ngIf="!product?.valid && (product?.dirty || product?.touched)">
+              <div [hidden]="!product?.errors?.required" class="alert alert-danger">
+                Sản phẩm không được để trống.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="amount" placeholder="Số lượng"
+                   formControlName="amount">
+            <label for="amount">Số lượng</label>
+            <div *ngIf="!amount?.valid && (amount?.dirty || amount?.touched)">
+              <div [hidden]="!amount?.errors?.required" class="alert alert-danger">
+                Số lượng không được để trống.
+              </div>
+              <div [hidden]="!amount?.errors?.min" class="alert alert-danger">
+                Số lượng phải là số nguyên dương.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="importDate" placeholder="Ngày nhập hàng"
+                   formControlName="importDate">
+            <label for="importDate">Ngày nhập hàng</label>
+            <div *ngIf="!importDate?.valid && (importDate?.dirty || importDate?.touched)">
+              <div [hidden]="!importDate?.errors?.required" class="alert alert-danger">
+                Ngày nhập hàng không được để trống.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="productionDate" placeholder="Ngày sản xuất"
+                   formControlName="productionDate">
+            <label for="productionDate">Ngày sản xuất</label>
+            <div *ngIf="!productionDate?.valid && (productionDate?.dirty || productionDate?.touched)">
+              <div [hidden]="!productionDate?.errors?.required" class="alert alert-danger">
+                Ngày sản xuất không được để trống.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="date" class="form-control" id="expirationDate" placeholder="Ngày hết hạn"
+                   formControlName="expirationDate">
+            <label for="expirationDate">Ngày hết hạn</label>
+            <div *ngIf="!expirationDate?.valid && (expirationDate?.dirty || expirationDate?.touched)">
+              <div [hidden]="!expirationDate?.errors?.required" class="alert alert-danger">
+                Ngày hết hàng không được để trống.
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="!formEdit.valid">Sửa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+

@@ -4,7 +4,8 @@
     <a class="btn btn-sm" style="background: #E88246" routerLink="/customer/create">Create customer</a>
     <h1>Customer Management</h1>
     <form class="d-flex">
-      <input class="form-control-sm me-2" type="search" name="search" placeholder="Search">
+      <input class="form-control-sm me-2" type="search" name="search" #name placeholder="Search">
+<!--      <button class="btn btn-sm" style="background: #E8C431" type="button" (click)="search(name.value)">Search</button>-->
       <button class="btn btn-sm" style="background: #E8C431" type="submit">Search</button>
     </form>
   </div>
